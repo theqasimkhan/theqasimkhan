@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Uses the Docker sub-action — no Node.js dependency, immune to Node deprecation
-      - uses: Platane/snk/action_generate@v3
+      - name: Generate snake SVGs
+        uses: Platane/snk@v3
         with:
           github_user_name: theqasimkhan
           outputs: |
@@ -24,19 +24,30 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Verify files were actually generated before attempting push
-      - name: Verify output
-        run: ls -la dist/
-
-      # Push dist/ to the output branch
-      - name: Push to output branch
+      - name: Verify snake files exist
         run: |
+          echo "=== Workspace root ==="
+          ls -la
+          echo "=== dist/ folder ==="
+          ls -la dist/ 2>/dev/null || echo "PROBLEM: dist/ was not created — snake generation failed"
+          echo "=== SVG files ==="
+          find . -name "*.svg" 2>/dev/null || echo "No SVG files found anywhere"
+
+      - name: Push to output branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          if [ ! -f "dist/github-contribution-grid-snake.svg" ]; then
+            echo "ERROR: SVG files missing — skipping push"
+            exit 1
+          fi
           cd dist
           git init -b output
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git remote add origin \
-            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/theqasimkhan/theqasimkhan.git"
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/theqasimkhan/theqasimkhan.git"
           git add .
           git commit -m "chore: regenerate snake [skip ci]"
           git push --force origin output
+          echo "SUCCESS: Snake pushed to output branch"
