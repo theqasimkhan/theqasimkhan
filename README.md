@@ -300,5 +300,5 @@ open_to    :
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:21262d,40:161b22,100:0d1117&height=120&section=footer&text=&fontSize=0" width="100%" />
 
 <div align="center">
-  <sub>Crafted with precision by <strong>Qasim Khan</strong> · Powered by clinical AI engineering · © 2025</sub>
+  <sub>Crafted with precision by <strong>Qasim Khan</strong> · © 2025</sub>
 </div>
