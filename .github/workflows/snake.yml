@@ -5,6 +5,10 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
+# Force Node.js 24 for all actions — avoids Node 20 deprecation failures
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -24,16 +28,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Push dist/ contents directly to the output branch using git
+      # Push dist/ to the output branch using an isolated git repo
       - name: Push to output branch
         run: |
           cd dist
-          git init
+          git init -b output
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -b output
+          git remote add origin \
+            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/theqasimkhan/theqasimkhan.git"
           git add .
-          git commit -m "chore: regenerate snake animation [skip ci]"
-          git push --force \
-            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/theqasimkhan/theqasimkhan.git" \
-            output
+          git commit -m "chore: regenerate snake [skip ci]"
+          git push --force origin output
