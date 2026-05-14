@@ -39,9 +39,55 @@
 
 ## &nbsp; About
 
-| &nbsp; | &nbsp; |
-|:---|:---|
-| <br> > **I don't just train models. I architect systems that reason, retrieve, and act.** <br><br> I'm **Qasim Khan** — an AI & ML Engineer specialising in clinical AI, retrieval-augmented generation, and deep learning systems built for environments where accuracy is non-negotiable. <br><br> My projects operate at the intersection of **biomedical NLP**, **vector retrieval**, and **production-grade engineering** — from 167K-document RAG pipelines for differential diagnosis, to multimodal chest X-ray systems, to full-stack repository intelligence platforms. <br><br> I believe great AI engineering means obsessing over: <br> **Grounding** — every output anchored in evidence, not hallucination <br> **Precision** — the right retrieval, the right model, the right context <br> **Explainability** — AI that clinicians and researchers can trust <br> **Depth** — systems that hold up under real-world conditions <br><br> | `````python` <br>`name       : "Qasim Khan"` <br>`role       : "AI & ML Engineer"` <br>`degree     : "BS Artificial Intelligence"` <br>`university : "PAF-IAST, Haripur, Pakistan"` <br>` ` <br>`focus      :` <br>`  - Clinical AI & RAG Systems` <br>`  - Biomedical NLP & Retrieval` <br>`  - Computer Vision & Multimodal AI` <br>`  - Full-stack AI Applications` <br>` ` <br>`flagship   : "CliniSynapse AI"` <br>`  → 167K PMC patient cases` <br>`  → Hybrid Dense+Sparse RAG` <br>`  → LLM differential diagnosis` <br>` ` <br>`open_to    :` <br>`  - Research Collaborations` <br>`  - AI Engineering Roles` <br>`  - High-Impact Projects` ````` |
+<table>
+<tr>
+<td valign="top" width="55%">
+
+<br>
+
+> **I don't just train models. I architect systems that reason, retrieve, and act.**
+
+I'm **Qasim Khan** — an AI & ML Engineer specialising in clinical AI, retrieval-augmented generation, and deep learning systems built for environments where accuracy is non-negotiable.
+
+My projects operate at the intersection of **biomedical NLP**, **vector retrieval**, and **production-grade engineering** — from 167K-document RAG pipelines for differential diagnosis, to multimodal chest X-ray systems, to full-stack repository intelligence platforms.
+
+I believe great AI engineering means obsessing over:<br>
+**Grounding** — every output anchored in evidence, not hallucination<br>
+**Precision** — the right retrieval, the right model, the right context<br>
+**Explainability** — AI that clinicians and researchers can trust<br>
+**Depth** — systems that hold up under real-world conditions
+
+<br>
+
+</td>
+<td valign="top" width="45%">
+
+<pre lang="python">
+name       : "Qasim Khan"
+role       : "AI & ML Engineer"
+degree     : "BS Artificial Intelligence"
+university : "PAF-IAST, Haripur, Pakistan"
+
+focus      :
+  - Clinical AI & RAG Systems
+  - Biomedical NLP & Retrieval
+  - Computer Vision & Multimodal AI
+  - Full-stack AI Applications
+
+flagship   : "CliniSynapse AI"
+  → 167K PMC patient cases
+  → Hybrid Dense+Sparse RAG
+  → LLM differential diagnosis
+
+open_to    :
+  - Research Collaborations
+  - AI Engineering Roles
+  - High-Impact Projects
+</pre>
+
+</td>
+</tr>
+</table>
 
 <br/>
 
