@@ -179,9 +179,9 @@
 
 <div align="center">
 
-<img height="175" src="https://github-readme-stats.vercel.app/api?username=theqasimkhan&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=e6edf3&text_color=8b949e&icon_color=6e7681&count_private=true&include_all_commits=true" />
+<img height="175" src="https://github-readme-stats.vercel.app/api?username=theqasimkhan&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=e6edf3&text_color=8b949e&icon_color=6e7681&count_private=true&include_all_commits=true&cache_seconds=86400" />
 &nbsp;
-<img height="175" src="https://github-readme-stats.vercel.app/api/top-langs/?username=theqasimkhan&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=e6edf3&text_color=8b949e&langs_count=6" />
+<img height="175" src="https://github-readme-stats.vercel.app/api/top-langs/?username=theqasimkhan&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=e6edf3&text_color=8b949e&langs_count=6&cache_seconds=86400" />
 
 <br/><br/>
 
