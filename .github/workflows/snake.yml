@@ -2,17 +2,19 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # runs daily at midnight UTC
-  workflow_dispatch:        # allows manual trigger from Actions tab
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 jobs:
   generate:
     runs-on: ubuntu-latest
     permissions:
-      contents: write       # required to push to the output branch
+      contents: write
 
     steps:
-      # Step 1: Generate the snake SVGs into the dist/ folder
+      - uses: actions/checkout@v4
+
+      # Generate the SVGs into dist/
       - uses: Platane/snk@v3
         with:
           github_user_name: theqasimkhan
@@ -22,11 +24,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Step 2: Push dist/ contents to the output branch
-      # JamesIves/github-pages-deploy-action@v4 replaces the deprecated
-      # crazy-max/ghaction-github-pages@v3 and supports Node.js 24
-      - uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: output
-          folder: dist
-          clean: false      # keep existing files on the branch
+      # Push dist/ contents directly to the output branch using git
+      - name: Push to output branch
+        run: |
+          cd dist
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b output
+          git add .
+          git commit -m "chore: regenerate snake animation [skip ci]"
+          git push --force \
+            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/theqasimkhan/theqasimkhan.git" \
+            output
