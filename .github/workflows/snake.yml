@@ -5,10 +5,6 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
-# Force Node.js 24 for all actions — avoids Node 20 deprecation failures
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -18,8 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Generate the SVGs into dist/
-      - uses: Platane/snk@v3
+      # Uses the Docker sub-action — no Node.js dependency, immune to Node deprecation
+      - uses: Platane/snk/action_generate@v3
         with:
           github_user_name: theqasimkhan
           outputs: |
@@ -28,7 +24,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Push dist/ to the output branch using an isolated git repo
+      # Verify files were actually generated before attempting push
+      - name: Verify output
+        run: ls -la dist/
+
+      # Push dist/ to the output branch
       - name: Push to output branch
         run: |
           cd dist
