@@ -2,7 +2,7 @@
 <!--  HERO — Name + role baked into the capsule image          -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,40:0d1117,100:161b22&height=220&section=header&text=Qasim%20Khan&fontSize=62&fontColor=ffffff&fontAlignY=38&desc=AI%20%26%20Machine%20Learning%20Engineer%20%E2%80%94%20Clinical%20AI%20%7C%20RAG%20Systems%20%7C%20Computer%20Vision&descSize=16&descAlignY=58&descColor=8b949e&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,40:0d1117,100:161b22&height=220&section=header&text=Qasim%20Khan&fontSize=62&fontColor=ffffff&fontAlignY=38&desc=AI%20%26%20Machine%20Learning%20Engineer%20%E2%80%94%20Clinical%20AI%20%7C%20RAG%20Systems%20%7C%20Computer%20Vision&descSize=16&descAlignY=58&descColor=8b949e&animation=fadeIn&v=2" width="100%" />
 
 <!-- ═══════════════════════════════════════════════════════════ -->
 <!--  TYPING + META BADGES                                      -->
